@@ -1,0 +1,15 @@
+/* #card-login {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+} */
+
+.card {
+    margin: 15% auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}

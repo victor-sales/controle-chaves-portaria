@@ -1,15 +1,96 @@
-/* #card-login {
-    position: absolute;
-    top: 20%;
-    left: 35%;
-} */
-
 .card {
-    margin: 15% auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 10% auto;
+    float: none;
+    margin-bottom: 10px;
 }
 
-h3 {
+.card > .card-header {
+    padding-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.card > .card-footer {
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+p,h3,h6 {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: #afabab;
+    font-weight: bold;
+}
+
+.alerta-cadastro {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+footer>div>div>p {
+    color: #afabab;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 14px;
+}
+
+#redes-sociais>li>i {
+    color: #afabab;
+    font-size: 14px;
+
+}
+.redes-sociais>li {
+    margin: 0 0 10px 0;
+}
+
+.tecnologias {
+    color: #afabab;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 14px;
+}
+
+.tecnologias>li {
+    margin: 0 0 10px 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+#rodape {
+    position: fixed;
+    background-color: #494749;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 20px 0 0 10px !important;
+}
+
+.titulo-rodape {
+    text-align: center;
+    color: #afabab;
+    font-weight: bold;
+}
+
+.custom-table {
+    text-align: center;
+}
+.custom-table>thead>tr>th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.custom-table>tbody>tr>td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.table-wrapper {
+    max-height: 350px;
+    overflow: auto;
+    display:inline-block;
+  }

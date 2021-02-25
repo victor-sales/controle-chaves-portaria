@@ -40,6 +40,7 @@ class ModelChaveFuncionario{
             $conexao = new Conexao();
             $conn = $conexao->conn();
             $stmt = $conn->prepare($sql);
+            
             if ($stmt->execute()) {
 
                 $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -52,6 +53,32 @@ class ModelChaveFuncionario{
             print_r($e->getMessage());
 
         }
+    }
+
+    public function remover($chave) {
+
+        try {
+
+            $sql = "DELETE FROM funcionario_chave where id_chave = :numero_chave";
+
+            $conexao = new Conexao();
+            $conn = $conexao->conn();
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(":numero_chave", $chave);
+
+    
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (PDOException $e) {
+            print_r($e->getMessage());
+
+        }
+
+        
     }
 }
 

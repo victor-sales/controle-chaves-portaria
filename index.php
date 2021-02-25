@@ -37,13 +37,11 @@ if (!isset($_SESSION) || $_SESSION['logado'] != 1) {
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <li><a id="btn-cadastrar-chave" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modal-cadastrar-chave">Cadastrar Chave</a></li>
-                                        <li><a class="dropdown-item" href="#">Remover Chave</a></li>
-                                        <li><a class="dropdown-item" href="#">Alterar chave</a></li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                            <div class="dropdown">
+                                <div class="dropdown">
                                     <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                         Funcionário
                                     </a>
@@ -53,12 +51,9 @@ if (!isset($_SESSION) || $_SESSION['logado'] != 1) {
                                 </div>
                             </li>
                             <li class="nav-item">
-                            <div class="dropdown position-absolute end-0">
-                                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Usuario
-                                    </a>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Usuario</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item" href="#">Alterar Senha</a></li>
                                         <li><a class="dropdown-item" href="logoff.php">Sair</a></li>
                                     </ul>
                                 </div>
@@ -101,20 +96,22 @@ if (!isset($_SESSION) || $_SESSION['logado'] != 1) {
             </div>
             <div class="col-6">
                 <div class="card">
-                    <div class="card-body table-wrapper">
-                        <table class="table table-hover table-responsive-sm custom-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Chave</th>
-                                <th scope="col">Funcionário</th>
-                                <th scope="col">Setor do Funcionário</th>
-                                <th scope="col">#</th>
-                            </tr>
-                        </thead>
-                        <tbody id="chaves-emprestadas">
-                            
-                        </tbody>
-                        </table>
+                    <div class="card-body">
+                        <div class="table-wrapper table-responsive">
+                            <table id="table-chaves-emprestadas" class="table table-sm" style="display: none">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Chave</th>
+                                        <th scope="col">Funcionário</th>
+                                        <th scope="col">Setor do Funcionário</th>
+                                        <th scope="col">#</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chaves-emprestadas">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,7 +119,7 @@ if (!isset($_SESSION) || $_SESSION['logado'] != 1) {
 
         </section>
         
-        <footer id="rodape">
+        <footer id="rodape" class="fixed-bottom">
             <div class="row">
                 <div class="col-4 justify-content-center">
                     <h3 class="titulo-rodape">Sobre</h3>
@@ -150,8 +147,8 @@ if (!isset($_SESSION) || $_SESSION['logado'] != 1) {
                 <div class="col-4 justify-content-center">
                     <h3 class="titulo-rodape">Redes</h3>
                     <ul id="redes-sociais">
-                        <li><i class="fab fa-linkedin"></i> <a href="">LinkedIn</a></li>
-                        <li><i class="fab fa-github"></i> <a href="">GitHub</a></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/victor-andrade-780713146/">LinkedIn</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/victor-sales">GitHub</a></li>
                     </ul>
                 </div>
             </div>

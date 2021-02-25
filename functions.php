@@ -92,6 +92,7 @@ if (isset($controle) && $controle != 0) {
             }
             break;
         case "6":
+            
             $chave_funcionario = new ControlChaveFuncionario();
             $chave_funcionario = $chave_funcionario->procurarChavesEmprestadas();
             if ($chave_funcionario != false) {
@@ -99,6 +100,39 @@ if (isset($controle) && $controle != 0) {
             } else {
                 echo json_encode("vazio");
             }
+            break;
+        case "7":
+
+            $chave = $dados['numero_chave'];
+            
+            if (isset($chave) || $chave != '' || isset($statusChave) || $statusChave != '') {
+                
+                $chave_funcionario = new ControlChaveFuncionario($chave);
+                $controlChave = new ControlChave($chave);
+    
+                $chave_funcionario = $chave_funcionario->devolverChave();
+    
+                if ($chave_funcionario) {
+                    
+                    $resposta = $controlChave->verificarStatus();
+                    echo json_encode($resposta);
+                    if ($resposta[0]["status"] == "1") {
+                        $atualizarStatus = $controlChave->atualizarStatus();
+    
+                        if ($atualizarStatus) {
+                            echo "Devolução evetuada com sucesso";
+                        } else {
+                            echo false;
+                        }
+                    } else {
+                        
+                        echo "Chave não estava emprestada. Erro!";
+                    }
+                }
+            } else {
+                echo false;
+            }
+
             break;
         default:
             echo "pfff";

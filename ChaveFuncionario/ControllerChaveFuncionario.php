@@ -32,6 +32,13 @@ class ControlChaveFuncionario extends ModelChaveFuncionario {
         }
     }
 
+    public function devolverChave() {
+        $chave = $this->getNumeroChave();
+
+        $resposta = parent::remover($chave);
+        return $resposta;
+    }
+
     private function getNumeroChave(){
         return $this->numero_chave;
     }

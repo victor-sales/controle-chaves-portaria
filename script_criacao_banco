@@ -1,0 +1,32 @@
+create database controle_chaves_portaria;
+use controle_chaves_portaria;
+
+create table if not exists usuario (
+	id int not null auto_increment primary key,
+    nome_usuario varchar(100) not null
+);
+
+create table if not exists chave (
+	id int not null auto_increment primary key,
+    numero_chave int not null,
+    nome_sala varchar(100),
+    status int not null
+);
+
+create table if not exists setor (
+	id int not null auto_increment primary key,
+    nome_setor varchar(100) not null
+);
+
+create table if not exists funcionario (
+	id int not null auto_increment primary key,
+    nome_funcionario varchar(100) not null,
+    id_setor_funcionario varchar(100) not null
+);
+
+create table if not exists funcionario_chave(
+	id int not null auto_increment primary key,
+    id_funcionario int not null,
+    id_chave int not null
+);
+
